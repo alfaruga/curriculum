@@ -1,3 +1,122 @@
+/*
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+let playerSelection;
+let computerSelection;
+let winner
+let count=0;
+		function computerPlay () {
+			random=Math.random()
+			
+			if (random>=0.66){return  computerSelection='Scissors'}
+			else if(random>=0.33){return  computerSelection='Rock'}
+			else {return computerSelection='Papper'};
+				}
+		function capitalize(text){
+	      var firstLetter=(text.charAt(0)).toUpperCase();
+	      var endSentence=(text.slice(1)).toLowerCase();
+	      return firstLetter+endSentence}
+
+	    function playerPlay(){
+	    	playerSelection=capitalize(prompt('Select your play', 'Rock, Papper or Scissors'));
+	    }
+
+
+
+function oneRound(){
+	computerPlay()
+	playerPlay()
+	
+	result=playerSelection+computerSelection
+	switch (result){
+		case 'PapperPapper':
+		case 'ScissorsScissors':
+		case 'RockRock':
+			return winner='Draw';
+			break;
+		case 'PapperRock':
+		case 'ScissorsPapper':
+		case 'RockScissors':
+			return winner='Player'
+			break;
+		case 'RockPapper':
+		case 'PapperScissors':
+		case 'ScissorsRock':
+			return winner='PC';
+			break;
+
+		}
+}
+function whoWon(){
+	if(winner=='Player'){
+			count++;
+			return count;
+		}
+		else if(winner=='PC'){
+			count--;
+			return count;
+		}
+		else {
+			return count;
+		}
+}
+
+function showPlays(){
+
+	alert('You choose: '+playerSelection+', the computer selected: '+computerSelection);
+}
+function game() {
+	for (var i=0; i <5; i++) {
+		oneRound();
+		whoWon();
+		showPlays();
+	}
+	return count;
+	}
+
+	function gameResult (){
+		if(count>0){
+		alert('The score is: '+count+' to your favor, you win!')}
+
+	else {
+		count<0?alert('The score is: '+(-1*count)+' to computer favor, better luck next time'):alert('It\'s a draw');
+
+}
+}
+
+function playTheGame(){
+	game();
+	gameResult();
+}
+
+		
+
+
+		
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+*/
 ### Introduction
 
 We're going to make a simple implementation of grade-school classic "rock paper scissors".  If you don't know what that is check the [wikipedia article](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) or [this](https://www.wikihow.com/Play-Rock,-Paper,-Scissors) ridiculous step-by-step.  For the moment we're just going to play the game from the browser console, but we will revisit it and add a front end later so don't forget to keep the code on GitHub! You might notice some 'view in browser' links in the student solutions - this is coming in a later lesson.  When you get there don't forget to come back and add  your link!
